@@ -4,12 +4,15 @@ $EmailTo = "emailto@email.com"
 $AdminUserName = "admin@email.com"
 $SecurePassword = ConvertTo-SecureString "yourpassword" -AsPlainText -Force
 
+# OR for PW, store it and call it here
+# $SecurePassword = Get-Content "Your Path" | ConvertTo-SecureString
+
 $Credential = new-object -typename System.Management.Automation.PSCredential -argumentlist $AdminUserName, $SecurePassword
 
-Connect-AzureAD
+#Connect-AzureAD
 
 # Activate Necessary PIM Role. Replace "Role" with PIM role (i.e. SharePoint Administrator) and you can change reason and duration
-New-AzureADPIMRequest -DurationInHours 8 -RoleName "Role" -Reason "Activation Reason"  
+#New-AzureADPIMRequest -DurationInHours 8 -RoleName "Role" -Reason "Activation Reason"  
 
 #Connect to PnP Online
 Connect-PnPOnline -Url $TenantAdminURL -Credentials $Credential
