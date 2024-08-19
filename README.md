@@ -2,6 +2,18 @@
 
 *Description:* This powershell script sends the user an email when the SharePoint storage crosses a certain threshold.
 
+**Prerequisites**
+
+For Newer PowerShell Versions (7.2+):
+```
+Install-Module -Name PnP.PowerShell -AllowClobber -Force -Scope CurrentUser
+```
+
+For Older PowerShell Versions (5.1+):
+```
+Install-Module -Name SharePointPnPPowerShellOnline -AllowClobber -Force -Scope CurrentUser
+```
+
 **YOUR changes in the script:**
 
     1) Fill in the values for $TenantAdminURL $EmailTo $AdminUserName $SecurePassword
