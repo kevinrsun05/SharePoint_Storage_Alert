@@ -19,6 +19,12 @@ Note: If you are asked to install NuGet and it fails, your powershell is likely 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 ```
 
+OR if that fails:
+```
+Install-WindowsFeature -Name “RSAT-AD-PowerShell” -IncludeAllSubFeature
+Get-Module -Name ActiveDirectory -ListAvailable
+Import-Module -Name ActiveDirectory
+```
 **YOUR changes in the script:**
 
     1) Fill in the values for $TenantAdminURL $EmailTo $AdminUserName $SecurePassword
