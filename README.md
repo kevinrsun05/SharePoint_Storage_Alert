@@ -14,6 +14,11 @@ For Older PowerShell Versions (5.1+):
 Install-Module -Name SharePointPnPPowerShellOnline -AllowClobber -Force -Scope CurrentUser
 ```
 
+Note: If you are asked to install NuGet and it fails, your powershell is likely v1. Run the following beforehand:
+```
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+```
+
 **YOUR changes in the script:**
 
     1) Fill in the values for $TenantAdminURL $EmailTo $AdminUserName $SecurePassword
